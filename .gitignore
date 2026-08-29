@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Production build
+client/dist/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+server/.env
+client/.env
+
+# MySQL database files
+mysql/data/
+mysql/data/**
+mysql/*.err
+mysql/*.pid
+mysql/*.log
+
+# Bundled MySQL runtime
+mysql/
+
+# Runtime
+runtime/
+
+# Installer output
+installer-output/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
