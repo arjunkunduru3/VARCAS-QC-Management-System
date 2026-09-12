@@ -7,13 +7,13 @@ echo   Database Setup
 echo ==========================================
 echo.
 
-set /p DBPASSWORD=Enter MySQL root password: 
+set /p DBPASSWORD=Enter MySQL root password:
 
 echo.
 echo Creating database if it does not exist...
 echo.
 
-"C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -u root -p%DBPASSWORD% -e "CREATE DATABASE IF NOT EXISTS qc_management_system;"
+mysql\bin\mysql.exe -u root -p%DBPASSWORD% -P 3307 -e "CREATE DATABASE IF NOT EXISTS qc_management_system;"
 
 if %ERRORLEVEL% NEQ 0 (
     echo.
@@ -26,7 +26,7 @@ echo.
 echo Importing VARCAS database...
 echo.
 
-"C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -u root -p%DBPASSWORD% qc_management_system < "%~dp0qc_management_system.sql"
+mysql\bin\mysql.exe -u root -p%DBPASSWORD% -P 3307 qc_management_system < "%~dp0qc_management_system.sql"
 
 if %ERRORLEVEL% EQU 0 (
     echo.
